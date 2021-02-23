@@ -8,10 +8,15 @@ import { ResolveEnd } from '@angular/router';
 })
 export class AppComponent {
   nombre: string = 'Ironman';
+  nombre2:string = 'dAVid BOtERo sAlAzAr'
   arreglo: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   PI: number = Math.PI;
   porcentaje: number = 0.234123;
   salario: number = 1234.5;
+  videoUrl:string = 'https://www.youtube.com/embed/d7LQ-I1c18s'
+  contrasenaFlat: boolean = true;
+
+  idioma: string = 'es';
 
   fecha: Date = new Date();
 

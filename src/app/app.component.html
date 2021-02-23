@@ -12,6 +12,11 @@
       </thead>
       <tbody>
         <tr>
+          <td>{{ nombre2 }}</td>
+          <td>capitalizado</td>
+          <td>{{ nombre2 | capitalizado }}</td>
+        </tr>
+        <tr>
           <td>{{ nombre }}</td>
           <td>uppercase</td>
           <td>{{ nombre | uppercase }}</td>
@@ -91,6 +96,39 @@
           <td>date:'MMMM - YYYY'</td>
           <td>{{ fecha | date:'MMMM - YYYY' }}</td>
         </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>date:'MMMM - YYYY':'':'en'</td>
+          <td>{{ fecha | date:'MMMM - YYYY':'':'en' }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>
+            date:'MMMM - YYYY':'':'{{ idioma }}'
+            <br>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-warning">
+                <input type="radio" name="options" id="option1" (click)="idioma = 'es'">Es
+              </label>
+              <label class="btn btn-primary">
+                <input type="radio" name="options" id="option2" (click)="idioma = 'en'"> En
+              </label>
+              <label class="btn btn-danger">
+                <input type="radio" name="options" id="option3" (click)="idioma = 'fr'"> Fr
+              </label>
+            </div>
+          </td>
+          <td>{{ fecha | date:'MMMM - YYYY':'':idioma }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>contraseña<br>
+          <button class="btn btn-outline-primary" (click)="contrasenaFlat = !contrasenaFlat">
+            {{ contrasenaFlat ? 'Desactivar' : 'Activar' }}
+          </button>
+          </td>
+          <td>{{ nombre | contrasena:contrasenaFlat }}</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -112,5 +150,14 @@
     <p>
       {{ heroe | json }}
     </p>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col">
+    <h3>Dom Seguro</h3>
+    <hr>
+    <iframe width="560" height="315" [src]="videoUrl | domseguro" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
   </div>
 </div>
